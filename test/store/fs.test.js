@@ -52,7 +52,7 @@ describe('sks/store/fs', function() {
   });
 
   it('empty store errors', function(done) {
-    var store = new pkg.FSKeyStore('/tmp/sks');
+    var store = new pkg.FSKeyStore('/tmp/sks-empty');
     store.get(function(err, id, key, meta){
       expect(err.message).to.be.equal('No keys in keystore');
       done();
