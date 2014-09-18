@@ -21,7 +21,7 @@ describe('sks/rotator', function() {
   it('should rotate', function(done) {
     var store = new pkg.MemoryKeyStore();
     var config = {};
-    var generator = function(cb){cb(false,{kid:'test',public:'key',private:'cert'});};
+    var generator = function(cb){cb(false, 'test', 'key', 'cert');};
     var rotator = new pkg.Rotator(store,config,generator);
     rotator.rotate(function(err){
       expect(err).to.not.exist;
