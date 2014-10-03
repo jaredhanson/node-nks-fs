@@ -2,8 +2,7 @@
  * Module Dependancies
  */
 
-var Reaper = require('../lib/reaper')
-  , Logger = require('./mocks/logger');
+var Reaper = require('../lib/reaper');
 
 /*
  * Test Zone
@@ -49,9 +48,8 @@ describe('sks/reaper', function () {
       })
     };
 
-    var logger = new Logger();
     before(function (done) {
-      var r = new Reaper(keystore, logger);
+      var r = new Reaper(keystore);
       r.purge(new Date() - 50, function (err) {
         if (err) {
           return done(err);
